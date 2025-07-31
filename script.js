@@ -5,6 +5,44 @@ const statusText = document.getElementById("status");
 const historyList = document.getElementById("history");
 const fileNameDisplay = document.getElementById("fileName");
 const dropZone = document.getElementById("dropZone");
+const canvas = document.getElementById("matrixCanvas");
+const ctx = canvas.getContext("2d");
+
+// Make the canvas full screen
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Characters to display (you can customize)
+const letters = "アァカサタナハマヤャラワンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+const fontSize = 14;
+const columns = Math.floor(canvas.width / fontSize);
+
+// An array of drops - one per column
+const drops = Array(columns).fill(1);
+
+function drawMatrix() {
+  // Black background with opacity to create trailing effect
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Bright green characters
+  ctx.fillStyle = "#0F0";
+  ctx.font = fontSize + "px monospace";
+
+  drops.forEach((y, index) => {
+    const text = letters.charAt(Math.floor(Math.random() * letters.length));
+    const x = index * fontSize;
+    ctx.fillText(text, x, y * fontSize);
+
+    // Randomly reset drop
+    if (y * fontSize > canvas.height && Math.random() > 0.975) {
+      drops[index] = 0;
+    }
+    drops[index]++;
+  });
+}
+
+setInterval(drawMatrix, 50);
 
 let selectedFile = null;
 
