@@ -1,0 +1,217 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  max-width: 400px;
+  width: 90%;
+}
+
+h2 {
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  color: #fff;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  margin-bottom: 20px;
+}
+
+input[type="password"] {
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+}
+
+.file-upload-wrapper {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.file-input {
+  display: none;
+}
+
+.custom-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.custom-button:hover {
+  background-color: #45a049;
+}
+
+#fileName {
+  font-size: 14px;
+  color: #ccc;
+  word-break: break-word;
+}
+
+#dropZone {
+  border: 2px dashed #888;
+  border-radius: 10px;
+  padding: 20px 80px;
+  margin-top: 10px;
+  color: #aaa;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+#dropZone.dragover {
+  background: #2a2a2a;
+  border-color: #4CAF50;
+  color: #4CAF50;
+}
+
+button {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  background: dodgerblue;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.progress-bar {
+  width: 100%;
+  background: #444;
+  border-radius: 5px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 10px;
+  background: rgb(37, 22, 170);
+  position: relative;
+  text-align: right;
+  padding-right: 5px;
+  font-size: 10px;
+  line-height: 10px;
+  color: #fff;
+  font-family: monospace;
+}
+
+#history {
+  margin-top: 20px;
+  text-align: left;
+}
+
+#history li {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.custom-password-wrapper {
+  display: flex;
+  align-items: center;
+  background: #2a2a2a;
+  border-radius: 6px;
+  padding: 0 10px;
+  margin: 10px 0;
+  height: 45px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.custom-password-wrapper input[type="password"],
+.custom-password-wrapper input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.custom-password-wrapper #togglePassword {
+  cursor: pointer;
+  font-size: 20px;
+  color: #ccc;
+  margin-left: 10px;
+}
+
+.custom-password-wrapper #togglePassword:hover {
+  color: #fff;
+}
+
+#strengthMeter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 4px 0;
+  gap: 6px;
+}
+
+.pixel-bar {
+  flex: 1;
+  height: 12px;
+  background: #333;
+  border: 2px solid #555;
+  box-shadow: inset 0 0 1px #000;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.pixel-bar.active-1 { background: red; border-color: #900; }
+.pixel-bar.active-2 { background: orange; border-color: #aa5500; }
+.pixel-bar.active-3 { background: yellow; border-color: #aa0; }
+.pixel-bar.active-4 { background: limegreen; border-color: #0a0; }
+
+.strength-label {
+  font-size: 11px;
+  margin-top: 4px;
+  color: #ccc;
+  font-family: 'Press Start 2P', monospace;
+  text-align: left;
+  position: relative;
+  cursor: help;
+}
+
+
+.strength-label::after {
+  content: "Use at least 8 characters with upper & lowercase, numbers, and symbols.";
+  position: absolute;
+  background: #222;
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+  top: -60px;
+  left: 0;
+  width: 240px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  box-shadow: 0 0 6px #000;
+}
+
+.strength-label:hover::after {
+  opacity: 1;
+}
+
